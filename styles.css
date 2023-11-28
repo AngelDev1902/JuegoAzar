@@ -1,0 +1,137 @@
+body {
+    background: rgb(54, 59, 189);
+    background: linear-gradient(304deg, rgba(54, 59, 189, 1) 14%, rgba(2, 15, 110, 1) 54%);
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "jugador1 versus jugador2";
+    grid-template-columns: 20% 60% 20%;
+    place-items: center;
+}
+
+.player1 {
+    grid-area: jugador1;
+
+    & .option {
+        background-color: #4b508a;
+        border: 8px solid #1f1f54;
+        color: white;
+    }
+}
+
+.player2 {
+    grid-area: jugador2;
+
+    & .option {
+        background-color: #538a53;
+        border: 8px solid #005700;
+        color: white;
+    }
+}
+
+.juego1 .juegoCard {
+    background-color: #4b508a;
+    border: 8px solid #1f1f54;
+    color: white;
+}
+
+.juego2 .juegoCard {
+    background-color: #538a53;
+    border: 8px solid #005700;
+    color: white;
+}
+
+.jugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.versus {
+    grid-area: versus;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+}
+
+.vs {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+
+    & p {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+.marcador {
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+}
+
+.ganador {
+    grid-area: ganador;
+}
+
+.option, .juegoCard {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    outline: 8px solid white;
+
+    & h3 {
+        margin: 0;
+    }
+
+    & i {
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    &:active {
+        background-color: rgb(199, 199, 199);
+    }
+}
+
+.juegoCard {
+    cursor: auto;
+
+    &:active {
+        background: none;
+    }
+}
+
+.desactivado {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+
+    & * {
+        visibility: hidden;
+    }
+}
